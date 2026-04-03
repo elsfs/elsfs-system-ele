@@ -1,0 +1,82 @@
+{
+  "name": "@vben/elsfs-system-ele",
+  "version": "5.4.7",
+  "homepage": "https://vben.pro",
+  "bugs": "https://github.com/vbenjs/vue-vben-admin/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vbenjs/vue-vben-admin.git",
+    "directory": "apps/web-ele"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "vben",
+    "email": "ann.vben@gmail.com",
+    "url": "https://github.com/anncwb"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "pnpm vite build --mode production",
+    "build:analyze": "pnpm vite build --mode analyze",
+    "dev": "pnpm vite --mode development",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc --noEmit --skipLibCheck"
+  },
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "2.3.1",
+    "reka-ui": "catalog:",
+    "@types/xlsx": "^0.0.36",
+    "@vben/access": "workspace:*",
+    "@vben/common-ui": "workspace:*",
+    "@vben/constants": "workspace:*",
+    "@vben/hooks": "workspace:*",
+    "@vben/icons": "workspace:*",
+    "@vben/layouts": "workspace:*",
+    "@vben/locales": "workspace:*",
+    "@vben/plugins": "workspace:*",
+    "@vben/preferences": "workspace:*",
+    "@vben/request": "workspace:*",
+    "@vben/stores": "workspace:*",
+    "@vben/styles": "workspace:*",
+    "@vben/types": "workspace:*",
+    "@vben/utils": "workspace:*",
+    "@vben-core/shared": "workspace:*",
+    "@vueuse/core": "catalog:",
+    "@wangeditor/editor": "5.1.23",
+    "@wangeditor/editor-for-vue": "5.1.12",
+    "codemirror": "^5.65.19",
+    "crypto-js": "4.2.0",
+    "dayjs": "catalog:",
+    "default-passive-events": "4.0.0",
+    "element-plus": "^2.9.1",
+    "export-from-json": "^1.7.4",
+    "lodash": "^4.17.21",
+    "lucide-vue-next": "catalog:",
+    "nprogress": "^0.2.0",
+    "pinia": "catalog:",
+    "splitpanes": "3.1.5",
+    "tailwindcss": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "vue3-tree-org": "^4.2.2",
+    "vxe-pc-ui": "catalog:",
+    "vxe-table": "catalog:",
+    "xe-utils": "^3.7.5",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.17.13",
+    "@types/nprogress": "^0.2.3",
+    "@types/splitpanes": "^2.2.6",
+    "@vxe-ui/plugin-export-xlsx": "^4.0.7",
+    "@vxe-ui/plugin-menu": "^4.0.2",
+    "@vxe-ui/plugin-render-wangeditor": "^4.0.2",
+    "unplugin-auto-import": "^0.18.5",
+    "unplugin-element-plus": "^0.8.0",
+    "unplugin-icons": "^22.0.0",
+    "unplugin-vue-components": "^0.27.4"
+  }
+}

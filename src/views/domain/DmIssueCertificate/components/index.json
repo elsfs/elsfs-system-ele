@@ -1,0 +1,33 @@
+{
+  "code": 0,
+  "message": "ok",
+  "type": "success",
+  "timestamp": "1770740487647",
+  "success": true,
+  "result": [
+    {
+      "domain": "2323.jglab.org.cn",
+      "type": "http-01",
+      "challengeEntity": {
+        "status": "PENDING",
+        "token": "EKwXNBs0gwazRrU6VxB8KhUI4aHK_jWMvEtSjOGwEls",
+        "type": null,
+        "url": "https://acme-staging-v02.api.letsencrypt.org/acme/chall/260340363/21581339673/S2tSUw"
+      },
+      "token": "EKwXNBs0gwazRrU6VxB8KhUI4aHK_jWMvEtSjOGwEls",
+      "validation": "EKwXNBs0gwazRrU6VxB8KhUI4aHK_jWMvEtSjOGwEls.f-Vlg0aWHGTVG4EMou1ckCKp8gF_q2KqNLVekwHTEyc"
+    },
+    {
+      "domain": "2323.jglab.org.cn",
+      "type": "dns-01",
+      "challengeEntity": {
+        "status": "PENDING",
+        "token": "7YYwRwMojTk6tt2OgqoNEYtEKrI-l8ZQCQkkuJNVE8k",
+        "type": null,
+        "url": "https://acme-staging-v02.api.letsencrypt.org/acme/chall/260340363/21581339673/YfFhHQ"
+      },
+      "token": null,
+      "validation": "7YYwRwMojTk6tt2OgqoNEYtEKrI-l8ZQCQkkuJNVE8k"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "ref_for": true,
+  "field": {
+    "name": "parentId",
+    "value": "0"
+  },
+  "componentField": {
+    "name": "parentId",
+    "modelValue": "0"
+  },
+  "value": "0",
+  "meta": {
+    "id": 2,
+    "path": "parentId",
+    "touched": true,
+    "pending": false,
+    "valid": true,
+    "validated": true,
+    "required": false,
+    "errors": [],
+    "bails": true,
+    "label": "上级菜单",
+    "type": "default",
+    "value": "0",
+    "multiple": false,
+    "__flags": {
+      "pendingUnmount": {
+        "2": false
+      },
+      "pendingReset": false
+    },
+    "fieldsCount": 1,
+    "dirty": true
+  },
+  "errors": [],
+  "name": "parentId",
+  "modelValue": "0",
+  "class": "w-full",
+  "isInValid": false
+}

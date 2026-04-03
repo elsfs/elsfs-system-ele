@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>波浪扩散效果分层定位版</title>
+  </head>
+  <body>
+    <div class="app-body" id="appBody">
+      <p>底部内容</p>
+
+      <div class="top-button" id="topButton">+</div>
+
+      <div id="ripple" class="ripple"></div>
+
+      <div class="ripple-bodys" id="ripple-body">
+        <h1 style="color: rgb(255 230 4)">你好</h1>
+        <div class="back-button" id="backButton">↗</div>
+      </div>
+    </div>
+
+    <script>
+      let appBody = null; // app容器
+      const backButton = document.getElementById('back-button'); // 关闭按钮
+      const topButton = document.getElementById('topButton'); // 开启按钮
+      const ripple = document.getElementById('ripple'); // 波浪
+      const rippleBody = document.getElementById('ripple-body'); // 波浪容器
+
+      getAppBody = () => {
+        appBody = document.getElementById('appBody');
+      };
+
+      setRippleSize = () => {
+        // 控制波浪小球的起始位置
+        /** @type { "top" | "bottom"} */
+        const vertical = 'top';
+        /** @type { "left" | "right"} */
+        const horizontal = 'right';
+
+        // 控制波浪小球的起始距离
+        const padding = 20;
+
+        // 将视图大小作为波浪小球的大小
+        const size = Math.max(appBody.offsetWidth, appBody.offsetHeight);
+        ripple.style.width = ripple.style.height = `${size}px`;
+
+        // 控制波浪小球的初始缩放大小，与css动画对应
+        ripple.style.transform = 'scale(0.01)';
+
+        let x = appBody.getBoundingClientRect().left - size / 2;
+        let y = appBody.getBoundingClientRect().top - size / 2;
+        x = x + padding;
+        y = y + padding;
+        // x,y
+        ripple.style.left = `${horizontal == 'left' ? x : x * -1}px`;
+        ripple.style.top = `${vertical == 'top' ? y : -padding}px`;
+      };
+
+      getInfo = (tag) => {
+        const size = Math.max(appBody.offsetWidth, appBody.offsetHeight);
+        console.log(appBody.getBoundingClientRect(), size, tag);
+      };
+
+      // init
+      window.onload = () => {
+        getAppBody();
+        setRippleSize();
+        getInfo('onload');
+      };
+      window.onresize = () => {
+        getAppBody();
+        setRippleSize();
+        getInfo('resize');
+      };
+
+      const rippleTime = 1.8;
+      const rippleTimeOffset = 0;
+      const rippleBodyTime = 0.8;
+      const rippleBodyTimeOffset = 0;
+
+      document
+        .getElementById('topButton')
+        .addEventListener('click', (event) => {
+          // 打开动画
+          ripple.style.animation = `ripple-animation ${rippleTime}s linear forwards`;
+          setTimeout(
+            () => {
+              rippleBody.style.animation = `ripple-body-animation ${rippleBodyTime}s linear forwards`;
+            },
+            (rippleTime + rippleTimeOffset) * 1000,
+          );
+        });
+
+      document
+        .getElementById('backButton')
+        .addEventListener('click', (event) => {
+          // 关闭动画
+          rippleBody.style.animation = `reverse-ripple-body-animation ${rippleBodyTime}s linear forwards`;
+          setTimeout(
+            () => {
+              ripple.style.animation = `reverse-ripple-animation ${rippleTime}s linear forwards`;
+            },
+            (rippleBodyTime + rippleBodyTimeOffset) * 1000,
+          );
+        });
+    </script>
+  </body>
+</html>
