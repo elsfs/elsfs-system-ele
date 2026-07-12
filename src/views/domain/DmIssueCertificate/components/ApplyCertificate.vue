@@ -35,7 +35,7 @@ const [From, firstFormApi] = useVbenForm({
         rows: 6,
         type: 'textarea',
       },
-      defaultValue: 'd.jglab.org.cn',
+      defaultValue: 'd.jglab-host.org.cn',
       fieldName: 'domainRaw',
       label: '域名列表',
       rules: 'required',

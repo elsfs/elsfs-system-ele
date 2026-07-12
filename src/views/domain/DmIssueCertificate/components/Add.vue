@@ -16,7 +16,7 @@ const emit = defineEmits<{
 }>();
 const formRef = ref<FormInstance>();
 const formLabelAlign = reactive<RuleForm>({
-  domainRaw: 'd.jglab.org.cn',
+  domainRaw: 'd.jglab-host.org.cn',
   keyType: 'ECC',
   directoryType: 'LE',
 });

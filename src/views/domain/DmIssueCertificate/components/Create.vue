@@ -44,7 +44,7 @@ const [From, formApi] = useVbenForm({
       componentProps: {
         placeholder: '请输入域名',
       },
-      defaultValue: 'd.jglab.org.cn',
+      defaultValue: 'd.jglab-host.org.cn',
       fieldName: 'domainRaw',
       label: '域名列表',
       rules: 'required',

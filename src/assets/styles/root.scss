@@ -1,3 +1,288 @@
 :root {
   --header: 212 100% 45%;
 }
+
+/* ============ vxe-table 样式模拟 ============ */
+
+.vxe-table-style {
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* 表头样式 - 仿 vxe-table */
+.vxe-table-style :deep(.el-table) {
+  font-size: 13px;
+  color: #333;
+}
+
+.vxe-table-style :deep(.el-table th.el-table__cell) {
+  background-color: #f5f7fa;
+  color: #333;
+  font-weight: 600;
+  border-bottom: 1px solid #e8ecf1;
+  height: 48px;
+  padding: 8px 0;
+}
+
+.vxe-table-style :deep(.el-table th.el-table__cell .cell) {
+  padding: 0 12px;
+  line-height: 32px;
+}
+
+/* 表头排序图标 */
+.vxe-table-style :deep(.el-table th.el-table__cell .caret-wrapper) {
+  height: 20px;
+}
+
+.vxe-table-style :deep(.el-table th.el-table__cell .sort-caret.ascending) {
+  top: 0px;
+}
+
+.vxe-table-style :deep(.el-table th.el-table__cell .sort-caret.descending) {
+  bottom: 0px;
+}
+
+/* 表格行样式 */
+.vxe-table-style :deep(.el-table .el-table__row) {
+  height: 48px;
+  transition: background-color 0.2s;
+}
+
+.vxe-table-style :deep(.el-table .el-table__row td.el-table__cell) {
+  border-bottom: 1px solid #e8ecf1;
+  padding: 6px 0;
+}
+
+.vxe-table-style :deep(.el-table .el-table__row td.el-table__cell .cell) {
+  padding: 0 12px;
+  line-height: 32px;
+}
+
+/* 行悬停效果 - 仿 vxe-table */
+.vxe-table-style :deep(.el-table .el-table__row:hover td.el-table__cell) {
+  background-color: #f5f7fa !important;
+}
+
+/* stripe 行样式 */
+.vxe-table-style :deep(.el-table .vxe-table--stripe-row td.el-table__cell) {
+  background-color: #fafbfc;
+}
+
+/* 边框样式 - 仿 vxe-table 的 border 效果 */
+.vxe-table-style :deep(.el-table--border) {
+  border: 1px solid #e8ecf1;
+}
+
+.vxe-table-style :deep(.el-table--border th.el-table__cell) {
+  border-right: 1px solid #e8ecf1;
+}
+
+.vxe-table-style :deep(.el-table--border td.el-table__cell) {
+  border-right: 1px solid #e8ecf1;
+}
+
+.vxe-table-style :deep(.el-table--border .el-table__row:last-child td.el-table__cell) {
+  border-bottom: 1px solid #e8ecf1;
+}
+
+/* 固定列阴影 */
+.vxe-table-style :deep(.el-table__fixed) {
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+.vxe-table-style :deep(.el-table__fixed-right) {
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 展开行样式 */
+.vxe-table-style :deep(.el-table__expanded-cell) {
+  padding: 16px 20px;
+  background-color: #fafbfc;
+}
+
+/* 空数据样式 */
+.vxe-table-style :deep(.el-table__empty-block) {
+  min-height: 100px;
+  color: #999;
+}
+
+/* 加载中样式 */
+.vxe-table-style :deep(.el-table__body-wrapper.is-loading) {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* 选择框样式 - 适配 vxe-table 风格 */
+.vxe-table-style :deep(.el-checkbox) {
+  --el-checkbox-input-border: 1px solid #d9d9d9;
+  --el-checkbox-checked-bg-color: #409eff;
+}
+
+.vxe-table-style :deep(.el-checkbox__inner) {
+  border-radius: 2px;
+}
+
+/* 筛选/排序按钮 hover 效果 */
+.vxe-table-style :deep(.el-table th.el-table__cell .el-icon) {
+  color: #909399;
+  transition: color 0.2s;
+}
+
+.vxe-table-style :deep(.el-table th.el-table__cell .el-icon:hover) {
+  color: #409eff;
+}
+
+/* 列宽拖拽线 */
+.vxe-table-style :deep(.el-table__column-resize-proxy) {
+  background-color: #409eff;
+}
+
+/* 表头分组样式 */
+.vxe-table-style :deep(.el-table__header-wrapper .el-table__cell .el-table__cell-wrapper) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 滚动条样式优化 - 仿 vxe-table */
+.vxe-table-style :deep(.el-table__body-wrapper::-webkit-scrollbar) {
+  width: 8px;
+  height: 8px;
+}
+
+.vxe-table-style :deep(.el-table__body-wrapper::-webkit-scrollbar-track) {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.vxe-table-style :deep(.el-table__body-wrapper::-webkit-scrollbar-thumb) {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.vxe-table-style :deep(.el-table__body-wrapper::-webkit-scrollbar-thumb:hover) {
+  background: #a8a8a8;
+}
+
+/* 表格尺寸 - 紧凑 */
+.vxe-table-style :deep(.el-table--mini) {
+  font-size: 12px;
+}
+
+.vxe-table-style :deep(.el-table--mini th.el-table__cell) {
+  height: 36px;
+  padding: 4px 0;
+}
+
+.vxe-table-style :deep(.el-table--mini .el-table__row) {
+  height: 36px;
+}
+
+.vxe-table-style :deep(.el-table--mini .el-table__row td.el-table__cell .cell) {
+  padding: 0 8px;
+  line-height: 28px;
+}
+
+/* 表格尺寸 - 小 */
+.vxe-table-style :deep(.el-table--small) {
+  font-size: 13px;
+}
+
+.vxe-table-style :deep(.el-table--small th.el-table__cell) {
+  height: 40px;
+  padding: 6px 0;
+}
+
+.vxe-table-style :deep(.el-table--small .el-table__row) {
+  height: 40px;
+}
+
+.vxe-table-style :deep(.el-table--small .el-table__row td.el-table__cell .cell) {
+  padding: 0 10px;
+  line-height: 28px;
+}
+
+/* 表格尺寸 - 默认 */
+.vxe-table-style :deep(.el-table--default th.el-table__cell) {
+  height: 48px;
+  padding: 8px 0;
+}
+
+.vxe-table-style :deep(.el-table--default .el-table__row) {
+  height: 48px;
+}
+
+/* ============ 仿 vxe-table 额外特性 ============ */
+
+/* 当表格有边框时，单元格内边距调整 */
+.vxe-table-style :deep(.el-table--border td.el-table__cell .cell) {
+  padding: 0 12px;
+}
+
+/* 表格 hover 行高亮 - 更明显的效果 */
+.vxe-table-style :deep(.el-table .el-table__row:hover td.el-table__cell) {
+  background-color: #e8edf4 !important;
+}
+
+/* 选中的行样式 */
+.vxe-table-style :deep(.el-table .el-table__row.current-row td.el-table__cell) {
+  background-color: #e6f0fa !important;
+}
+
+/* 表头固定时阴影 */
+.vxe-table-style :deep(.el-table__header-wrapper.is-fixed) {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* 表格底部合计行 */
+.vxe-table-style :deep(.el-table__footer-wrapper td.el-table__cell) {
+  background-color: #f5f7fa;
+  font-weight: 600;
+  border-top: 1px solid #e8ecf1;
+}
+
+/* 表格内容区域 - 平滑过渡 */
+.vxe-table-style :deep(.el-table__body-wrapper) {
+  transition: all 0.2s;
+}
+
+/* 树形表格缩进 */
+.vxe-table-style :deep(.el-table .el-table__indent) {
+  display: inline-block;
+  width: 18px;
+}
+
+/* 表格展开图标旋转 */
+.vxe-table-style :deep(.el-table .el-table__expand-icon) {
+  transition: transform 0.2s ease;
+}
+
+.vxe-table-style :deep(.el-table .el-table__expand-icon--expanded) {
+  transform: rotate(90deg);
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+  .vxe-table-style :deep(.el-table th.el-table__cell .cell) {
+    padding: 0 8px;
+  }
+
+  .vxe-table-style :deep(.el-table .el-table__row td.el-table__cell .cell) {
+    padding: 0 8px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .vxe-table-style :deep(.el-table__fixed) {
+    position: static !important;
+  }
+
+  .vxe-table-style :deep(.el-table__fixed-right) {
+    position: static !important;
+  }
+
+  .vxe-table-style :deep(.el-table__body-wrapper) {
+    overflow: visible !important;
+  }
+}
+

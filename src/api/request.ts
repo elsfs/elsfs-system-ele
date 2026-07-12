@@ -83,7 +83,6 @@ function createRequestClient(baseURL: string) {
       return config;
     },
   });
-
   // response数据解构
   client.addResponseInterceptor<SystemHttpResponse>({
     fulfilled: (response) => {
