@@ -85,7 +85,7 @@ setupVbenVxeTable({
           if (dictOp.value === name) {
             return h(
               ElTag,
-              { type: dictOp?.css, effect: 'dark' },
+              { type: dictOp?.css, effect: 'kight' },
               { default: () => dictOp.label },
             );
           }
