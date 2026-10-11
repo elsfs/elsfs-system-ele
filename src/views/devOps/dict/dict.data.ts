@@ -144,6 +144,7 @@ const dictColumns: VxeGridPropTypes.Columns<SysDict> = [
 
 export const dictGridOptions: VxeTableGridOptions = {
   columns: dictColumns,
+  height: 'auto',
   radioConfig: {
     highlight: true,
     checkRowKey: 'dictId',

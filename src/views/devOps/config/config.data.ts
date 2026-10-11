@@ -167,6 +167,7 @@ const columns: VxeGridPropTypes.Columns<SysConfig> = [
 
 export const gridOptions: VxeGridProps<SysConfig> = {
   columns,
+  height: 'auto',
   checkboxConfig: {
     checkField: 'configId',
     highlight: true,
