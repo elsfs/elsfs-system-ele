@@ -14,7 +14,7 @@ import { useDict } from '#/utils/dictUtils';
 
 const { configType } = useDict('configType');
 
-function checkDate(
+export function checkDate(
   fieldVal: string,
   dataId: string,
   fieldName: string,

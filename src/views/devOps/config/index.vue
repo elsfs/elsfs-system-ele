@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SysConfig } from '#/api/devOps/sysConfig';
 
-import { ref } from 'vue';
+import { ref} from 'vue';
 
 import { Page, useVbenModal } from '@vben/common-ui';
 
@@ -11,8 +11,9 @@ import { useVbenVxeGrid } from '#/adapter/vxe-table';
 import { useRequestHandle } from '#/api/devOps/sysConfig';
 
 import { searchFormOptions as formOptions, gridOptions } from './config.data';
-import ConfigModal from './ConfigModal.vue';
+import ConfigDialog from  './ConfigDialog.vue';
 
+const  configDialogRef = ref();
 const getCheckboxRecords = ref<SysConfig[]>([]);
 const [Grid, gridApi] = useVbenVxeGrid({
   gridOptions,
@@ -36,17 +37,9 @@ const [Grid, gridApi] = useVbenVxeGrid({
   },
 });
 
-const [Modal, modalApi] = useVbenModal({
-  // 连接抽离的组件
-  connectedComponent: ConfigModal,
-});
 
 function openModal(row: null | SysConfig, type: 'add' | 'edit') {
-  modalApi.setData({
-    isUpdate: type === 'edit',
-    data: row,
-  });
-  modalApi.open();
+  configDialogRef.value.openDialog(row?.configId)
 }
 function deleteHandle(row: SysConfig | SysConfig[]) {
   if (isArray(row)) {
@@ -78,7 +71,7 @@ function deleteHandle(row: SysConfig | SysConfig[]) {
         <el-button type="danger" @click="deleteHandle(row)">删除</el-button>
       </template>
     </Grid>
-    <Modal @success="gridApi.query()" />
+    <ConfigDialog ref="configDialogRef" @refresh="gridApi.query()" />
   </Page>
 </template>
 
