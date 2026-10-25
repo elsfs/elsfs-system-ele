@@ -5,7 +5,7 @@ export const { useRequestHandle, requestPath } = useRequest('/sysConfig');
 /**
  * 系统配置
  */
-export interface SysConfig {
+export interface SysConfigApi {
   /** 配置ID */
   configId: string;
   /** 配置KEY */
@@ -28,7 +28,7 @@ export const configItem = {
 };
 export const getConfigByConfigKey = (configKey: string) => {
   // 获取配置项
-  return requestClient.get<SysConfig>('/sysConfig/getConfigByConfigKey', {
+  return requestClient.get<SysConfigApi>('/sysConfig/getConfigByConfigKey', {
     params: { configKey },
   });
 };

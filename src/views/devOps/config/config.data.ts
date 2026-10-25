@@ -1,16 +1,18 @@
 import type { VxeGridProps, VxeGridPropTypes } from 'vxe-table';
 
+import type { SysConfig } from './sysConfig.api';
+
 import type { VbenFormProps, VbenFormSchema } from '#/adapter/form';
 import type { DuplicateCheckQry } from '#/api/core/duplicateCheck';
-import type { SysConfig } from '#/api/devOps/sysConfig';
 
 import { merge } from 'lodash';
 
 import { z } from '#/adapter/form';
 import { doDuplicateCheck } from '#/api/core/duplicateCheck';
-import { useRequestHandle } from '#/api/devOps/sysConfig';
 import { schemaName } from '#/api/schemaName';
 import { useDict } from '#/utils/dictUtils';
+
+import { useRequestHandle } from './sysConfig.api';
 
 const { configType } = useDict('configType');
 

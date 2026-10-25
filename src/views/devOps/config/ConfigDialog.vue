@@ -23,7 +23,7 @@ const form = reactive({
   configKey: '',
   configName: '',
   configValue: '',
-  configType: 'S',
+  dataType: 'S',
   remark: '',
 });
 // 定义校验规则
@@ -109,23 +109,36 @@ defineExpose({
     draggable
     align-center
   >
-    <el-form :model="form" :rules="dataRules" label-width="90px" ref="dataFormRef" v-loading="loading">
+    <el-form :model="form" autofocus :rules="dataRules" label-width="90px" ref="dataFormRef" v-loading="loading">
       <el-form-item label="配置KEY" prop="configKey">
-        <el-input placeholder="请输入配置KEY" clearable v-model="form.configKey" />
+        <el-input
+        placeholder="请输入配置KEY"
+        clearable
+        v-model="form.configKey"
+        disabled
+        />
       </el-form-item>
       <el-form-item label="配置名称" prop="configName">
-        <el-input placeholder="请输入配置名称" clearable v-model="form.configName" />
+        <el-input placeholder="请输入配置名称" clearable v-model="form.configName" disabled  />
       </el-form-item>
       <el-form-item label="配置值" prop="configValue">
-        <el-input placeholder="请输入配置值" clearable v-model="form.configValue" />
-      </el-form-item>
-      <el-form-item label="配置类型" prop="configType">
-        <select v-model="form.configType">
-          <option v-for="item in configType" :key="item.value" :value="item.value">{{ item.label }}</option>
-        </select>
+        <el-switch
+          v-model="form.configValue"
+          v-if="form.dataType === 'B'"
+          active-value="1"
+          inactive-value="0"
+          active-text="开启"
+          inactive-text="关闭"
+        />
+        <el-input
+          v-else
+          v-model="form.configValue"
+          placeholder="请输入配置值"
+          clearable
+        />
       </el-form-item>
       <el-form-item label="备注" prop="remark">
-        <el-input placeholder="请输入备注" type="textarea" clearable v-model="form.remark" />
+        <el-input placeholder="请输入备注" type="textarea" clearable v-model="form.remark"/>
       </el-form-item>
     </el-form>
     <template #footer>
@@ -136,3 +149,5 @@ defineExpose({
     </template>
   </el-dialog>
 </template>
+<style lang="less" scoped>
+</style>

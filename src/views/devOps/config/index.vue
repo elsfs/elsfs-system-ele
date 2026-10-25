@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { SysConfig } from '#/api/devOps/sysConfig';
+import type { SysConfig } from './sysConfig.api';
 
 import { ref} from 'vue';
 
-import { Page, useVbenModal } from '@vben/common-ui';
+import { Page } from '@vben/common-ui';
 
 import { isArray } from 'lodash';
 
 import { useVbenVxeGrid } from '#/adapter/vxe-table';
-import { useRequestHandle } from '#/api/devOps/sysConfig';
 
 import { searchFormOptions as formOptions, gridOptions } from './config.data';
 import ConfigDialog from  './ConfigDialog.vue';
+import { useRequestHandle } from './sysConfig.api';
 
 const  configDialogRef = ref();
 const getCheckboxRecords = ref<SysConfig[]>([]);
